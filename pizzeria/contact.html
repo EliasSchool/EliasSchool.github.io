@@ -67,15 +67,15 @@
     <div class="container-fluid pt-22">
             <form name="sentMessage" id="contactForm" novalidate="novalidate">
                 <div class="control-group">
-                    <input type="text" class="form-control bg-transparent p-4" id="name" placeholder="Käyttäjänimi"/>
+                    <input type="text" class="form-control bg-transparent p-4" id="nimi" placeholder="Käyttäjänimi"/>
                     <p class="help-block text-danger"></p>
                 </div>
                 <div class="control-group">
-                    <input type="password" class="form-control bg-transparent p-4" id="email" placeholder="Salasana" />
+                    <input type="password" class="form-control bg-transparent p-4" id="salasana" placeholder="Salasana" />
                     <p class="help-block text-danger"></p>
                 </div>
                 <div class="buttonregister">
-                    <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit" id="sendMessageButton">
+                    <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit" id="registernappi" onclick="onregisterClick()">
                         Rekisteröidy</button>
                 </div>
             </form>
@@ -145,11 +145,11 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
+    
+    
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
+    <script src="js/register.js"></script>
+    
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
