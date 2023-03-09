@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", onkoKirjautunut)
+
 
 // register nappulan functio 
 function onregisterClick() {
