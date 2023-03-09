@@ -10,6 +10,7 @@ function onregisterClick() {
         //laitetaan nimi ja salasana evästeisiin joka tulee olemaan inputti molemmista
         localStorage.setItem("nimi", nimi)
         localStorage.setItem("salasana", salasana)
+        window.location.replace("index.html")
     } else {
         console.log("joo")
     }
