@@ -1,6 +1,5 @@
 const addToCartButton = document.getElementById('add-to-cart-button');
 const menuItemCheckboxes = document.querySelectorAll('.menu-item-checkbox');
-const cartItemsDropdown = document.getElementById('cart-items');
 const notification = document.getElementById("notification")
 
 addToCartButton.addEventListener('click', () => {
@@ -28,5 +27,6 @@ addToCartButton.addEventListener('click', () => {
     setTimeout(() => {
       notification.style.display = 'none';
     }, 3000);
+    console.log("haloo")
   }
 });
