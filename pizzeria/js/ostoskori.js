@@ -10,16 +10,20 @@ document.addEventListener("DOMContentLoaded", function() {
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
   const nameHeader = document.createElement("th");
+
   nameHeader.textContent = "Tuote";
   const priceHeader = document.createElement("th");
   priceHeader.textContent = "Hinta";
+
   const removeHeader = document.createElement("th");
   removeHeader.textContent = "Poista";
+
   headerRow.appendChild(nameHeader);
   headerRow.appendChild(priceHeader);
   headerRow.appendChild(removeHeader);
   thead.appendChild(headerRow);
   table.appendChild(thead);
+  
   const tbody = document.createElement("tbody");
   table.appendChild(tbody);
 
