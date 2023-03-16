@@ -38,10 +38,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="index.html" class="nav-item nav-link active">Koti</a>
-                    <a href="menu.html" class="nav-item nav-link">Menu</a>
-                    <a href="service.html" class="nav-item nav-link">🛒 Ostoskori</a>
-                    <a href="contact.html" class="nav-item nav-link">Kirjaudu</a>
+                    <a href="index.html" class="nav-item nav-link active" id="home">Koti</a>
+                    <a href="menu.html" class="nav-item nav-link" id="menu">Menu</a>
+                    <a href="service.html" class="nav-item nav-link" id="ostos">🛒 Ostoskori</a>
+                    <a href="contact.html" class="nav-item nav-link" id="log">Kirjaudu</a>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function launch() {
+                    const name = localStorage.getItem("nimi");
+                    const nameDisplay = document.getElementById("name-display");
+                    nameDisplay.textContent = name;});
+                    </script>
+                    <p id="name-display" class="nav-item nav-link">et ole vielä kirjautunut</p>
                 </div>
             </div>
         </nav>
@@ -244,7 +251,7 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
+    
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
