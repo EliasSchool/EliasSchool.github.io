@@ -10,16 +10,19 @@ document.addEventListener("DOMContentLoaded", function() {
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
   const nameHeader = document.createElement("th");
-
+  
+  
   nameHeader.textContent = "Tuote";
   const priceHeader = document.createElement("th");
   priceHeader.textContent = "Hinta";
-
+  const topping = document.createElement("th")
+  topping.textContent = "Täytteet"
   const removeHeader = document.createElement("th");
   removeHeader.textContent = "Poista";
 
   headerRow.appendChild(nameHeader);
   headerRow.appendChild(priceHeader);
+  headerRow.appendChild(topping);
   headerRow.appendChild(removeHeader);
   thead.appendChild(headerRow);
   table.appendChild(thead);
@@ -39,12 +42,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const row = document.createElement("tr");
     const nameCell = document.createElement("td");
     nameCell.textContent = item.name;
+    console.log(item, index)
     const priceCell = document.createElement("td");
     const price = parseFloat(item.price.replace("€", "").trim()); // Poistetaan €-merkki ja muunnetaan numeroksi
     priceCell.textContent = `€${price.toFixed(2)}`; // Lisätään €-merkki takaisin ja muotoillaan valuuttana
+    const toppingCell  = document.createElement("td")
+
     const removeCell = document.createElement("td");
     const removeButton = document.createElement("button");
     removeButton.textContent = "X";
+    removeButton.style.backgroundColor = "transparent"
+    removeButton.style.border = "none"
+
     removeButton.addEventListener("click", function() {
       ostoskori.splice(index, 1); // Poistetaan tuote taulukosta
       localStorage.setItem("ostoskori", JSON.stringify(ostoskori)); // Päivitetään paikallinen tallennustila
@@ -59,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         removeCell.appendChild(removeButton);
         row.appendChild(nameCell);
         row.appendChild(priceCell);
+        row.appendChild(toppingCell)
         row.appendChild(removeCell);
         tbody.appendChild(row);
         totalPrice += price; // Add price of current item to total price

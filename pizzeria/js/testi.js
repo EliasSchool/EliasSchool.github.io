@@ -1,5 +1,20 @@
+const pizza = document.getElementById("row1")
+const pizzateksti = document.getElementById("rowi1")
+const juomateksti = document.getElementById("rowi2")
+const juoma = document.getElementById("row2")
+const fantasai = document.getElementById("rowi3")
+document.addEventListener("DOMContentLoaded", function() {
+  pizza.style.display = "flex"
+  pizzateksti.style.display = "block"
+  juoma.style.display = "none"
+  juomateksti.style.display = "none"
+  fantasai.style.display = "none"
+}) 
+
 const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
-localStorage.setItem("ostoskori", [])
+if(!localStorage.getItem("ostoskori")){
+  localStorage.setItem("ostoskori", [])
+}
 addToCartBtns.forEach(function(btn) {
   btn.addEventListener('click', function() {
     const name = btn.dataset.name;
@@ -24,3 +39,28 @@ addToCartBtns.forEach(function(btn) {
 
   });
 });
+function juomat() {
+  juoma.style.display ="flex"
+  juomateksti.style.display = "block"
+  pizza.style.display = "none"
+  pizzateksti.style.display = "none"
+  fantasai.style.display = "none"
+
+}
+
+function pizzat() {
+  pizza.style.display = "flex"
+  pizzateksti.style.display = "block"
+  juoma.style.display = "none"
+  juomateksti.style.display = "none"
+  fantasai.style.display = "none"
+
+}
+
+function fantasia() {
+  pizza.style.display = "none"
+  pizzateksti.style.display = "none"
+  juoma.style.display = "none"
+  juomateksti.style.display = "none"
+  fantasai.style.display = "block"
+}
