@@ -9,10 +9,14 @@ document.addEventListener("DOMContentLoaded", function() {
   juoma.style.display = "none"
   juomateksti.style.display = "none"
   fantasai.style.display = "none"
+  console.log(localStorage.getItem("ostoskori").length)
+  if(localStorage.getItem("ostoskori").length === 0) {
+      localStorage.setItem("ostoskori", "[]")
+  }
 }) 
 
 const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
-if(!localStorage.getItem("ostoskori")){
+if(!localStorage.getItem("ostoskori").length < 0){
   localStorage.setItem("ostoskori", [])
 }
 addToCartBtns.forEach(function(btn) {

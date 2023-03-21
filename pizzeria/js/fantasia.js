@@ -1,15 +1,15 @@
-// Get the necessary elements from the HTML
+// haetaan halutut tiedot htmllästä
 const pohjaSelect = document.getElementById('pohja');
 const kastikeSelect = document.getElementById('kastike');
 const toppingsCheckboxes = document.getElementsByName('toppings');
 
-// Add event listener to the add to cart button
+// lisätään addEventlisteneri joka runnaa kun buttonia painetaan
 const addToCartBtn = document.getElementById('order-button');
 addToCartBtn.addEventListener('click', addToCart);
 
-// Function to add selected pizza to the cart
+// Functio joka lisää valitun tuotteen ostoskoriin 
 function addToCart() {
-  // Get selected values from the dropdowns and checkboxes
+  // Hakee täytteitten tiedot
   const pohja = pohjaSelect.value;
   const kastike = kastikeSelect.value;
   const toppings = [];
@@ -22,7 +22,7 @@ function addToCart() {
     }
   });
   totalPrice = totalPrice + 9.90
-  // Create pizza object with selected options and total price
+  // Luodaan pizza objekti jossa on hinta ja täytteet sun muut
   const pizza = {
     name: "Fantasia",
     price: String(totalPrice),  
@@ -34,13 +34,13 @@ function addToCart() {
         }] 
   };
 
-  // Get existing cart items from localStorage or create an empty array
+  // Haetaan ostoskorin tiedot ja jos ei löydy niin lisätään tyhjä lista
   let cartItems = JSON.parse(localStorage.getItem('ostoskori')) || [];
 
-  // Add the pizza to the cart
+  // Lisätään pizza ostoskoriin
   cartItems.push(pizza);
 
-  // Save the updated cart items to localStorage
+  // Lisätään päivitetty ostoskori localstorageen
   localStorage.setItem('ostoskori', JSON.stringify(cartItems));
 
   // Show success message to user

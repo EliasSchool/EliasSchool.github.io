@@ -71,14 +71,13 @@ document.addEventListener("DOMContentLoaded", function() {
         row.appendChild(toppingCell)
         row.appendChild(removeCell);
         tbody.appendChild(row);
-        totalPrice += price; // Add price of current item to total price
+        totalPrice += price; // Lisätään hintaa jokasesta pizzasta 
       });
   
-      // Update total price on page
+      // Päivitetään lopullinen hinta 
       totalDiv.textContent = `Total price: €${totalPrice.toFixed(2)}`;
     } else {
         removeitems.style.display ="none"
-        // "ostoskori" array does not exist in local storage
         const emptyCartMessage = document.createElement("p");
         emptyCartMessage.textContent = "Ostoskori on tyhjä.";
         const cartContainer = document.querySelector("#cart-container");
@@ -92,10 +91,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get the table body and total price element
     const totalDiv = document.querySelector("#cart-container div");
      
-    // Clear the "ostoskori" array from local storage
+    // Tyhjennetään ostoskori localstoragesta
     localStorage.setItem("ostoskori", "[]");
     
-    // Update the total price element
+    // Päiviteetän lopullinen hinta 
     totalDiv.textContent = `Total price: €0.00`;
     location.reload()
 
