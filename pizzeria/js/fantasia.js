@@ -1,5 +1,6 @@
 // haetaan halutut tiedot htmllästä
 const pohjaSelect = document.getElementById('pohja');
+const kokoSelect = document.getElementById('koko');
 const kastikeSelect = document.getElementById('kastike');
 const toppingsCheckboxes = document.getElementsByName('toppings');
 
@@ -11,6 +12,7 @@ addToCartBtn.addEventListener('click', addToCart);
 function addToCart() {
   // Hakee täytteitten tiedot
   const pohja = pohjaSelect.value;
+  const koko = kokoSelect.value;
   const kastike = kastikeSelect.value;
   const toppings = [];
   let totalPrice = 0;
@@ -29,6 +31,7 @@ function addToCart() {
     taute: [
         {
         pohja: pohja,
+        koko: koko,
         kastike: kastike,
         toppings: toppings
         }] 

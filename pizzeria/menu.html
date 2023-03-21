@@ -249,10 +249,11 @@
                     </div>
                 </div>
             </div>
+        <div>    
             <div id="rowi3">
-                <div class="container border p-3 border-3" style="background-color:white;">
-                    <h6 class="display-4" data-price="9.90">Fantasia Pizza - 9.90€</h6>
-                    <h5>Neljä vapaavalintaista lisätäytettä, tomaattikastiketta ja mozzarellajuustoa</h5>
+                <div style="background-color: white; margin-left: auto; border-color: black; border-style: solid; border-width: 2px;" >
+                    <h6 class="display-4" data-price="9.90" style="margin-left: 5px; padding: 20px;">Fantasia Pizza - 9.90€</h6>
+                    <h5 style="margin-left: 25px;">Neljä vapaavalintaista lisätäytettä, tomaattikastiketta ja mozzarellajuustoa</h5>
                     <h1 class="m-0">&nbsp</h1>
             
                 <style>
@@ -267,11 +268,17 @@
                 }
                 </style>
             
-                <form>
+                <form style="margin-left: 25px;">
                 <label for="pohja"><h5>Valitse pohja</h5></label>
-                <select id="pohja" name="pohja">
-                    <option value="norm">Norm</option>
+                <select id="pohja" name="pohja" style="margin-right: 20px;">
+                    <option value="norm">Normaali</option>
                     <option value="gluteeniton">Gluteeniton</option>
+                </select>
+
+                <label for="koko"><h5>Valitse koko</h5></label>
+                <select id="koko" name="koko" style="margin-right: 20px;">
+                    <option value="norm">Normaali</option>
+                    <option value="gluteeniton">Iso</option>
                 </select>
         
                 <label for="kastike"><h5>Valitse kastike</h5></label>
@@ -365,36 +372,11 @@
                     </div>
                 </div>          
                 <h5 class="m-0">&nbsp</h5>
-                <button type="submit" id="order-button">Lisää ostoskoriin</button>
-                <div id="success-message" style="display: none;" ><h5>Lisätty ostoskoriin!</h5></div>
+                <button type="submit" id="order-button" style="border-color: #DA9F5B; background-color: #DA9F5B; padding: 5px; margin-bottom: 15px;">Lisää ostoskoriin</button>
                 </form>
                 </div>
             </div>
-        
-          
-          <!-- script joka tallentaa tilauksen storageen -->
-          <script>
-            const form = document.querySelector('form');
-            const orderButton = document.querySelector('#order-button');
-            const successMessage = document.querySelector('#success-message');
-          
-            orderButton.addEventListener('click', function(event) {
-              event.preventDefault();
-              const selectedKastike = form.kastike.value;
-              const selectedPohja = form.pohja.value;
-              const selectedToppings = Array.from(form.toppings).filter(input => input.checked).map(input => input.value);
-              const ostoskori = {
-                kastike: selectedKastike,
-                pohja: selectedPohja,
-                toppings: selectedToppings
-              };
-              sessionStorage.setItem('ostoskori', JSON.stringify(ostoskori));
-              
-              // Show success message
-              successMessage.style.display = 'block';
-            });
-          </script>
-          <!-- script loppuu-->
+        </div>
           
           <!-- script, joka määrittää ettei pysty valitsemaan enemmän kuin 4 täytettä -->
           <script>
