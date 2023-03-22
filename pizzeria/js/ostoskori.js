@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   
       // Päivitetään lopullinen hinta 
-      totalDiv.textContent = `Total price: €${totalPrice.toFixed(2)}`;
+      totalDiv.textContent = `Kokonaishinta: €${totalPrice.toFixed(2)}`;
     } else {
         removeitems.style.display ="none"
         const emptyCartMessage = document.createElement("p");
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem("ostoskori", "[]");
     
     // Päiviteetän lopullinen hinta 
-    totalDiv.textContent = `Total price: €0.00`;
+    totalDiv.textContent = `Kokonaishinta: €0.00`;
     location.reload()
 
   });
