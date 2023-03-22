@@ -1,4 +1,3 @@
-// haetaan halutut tiedot htmllästä
 const pohjaSelect = document.getElementById('pohja');
 const kokoSelect = document.getElementById('koko');
 const kastikeSelect = document.getElementById('kastike');
@@ -24,6 +23,12 @@ function addToCart() {
     }
   });
   totalPrice = totalPrice + 9.90
+
+  // Tarkistaa, että minkä kokoinen pizza on
+  if (koko === "isoKoko") {
+    totalPrice = totalPrice + 5.50
+  }
+
   // Luodaan pizza objekti jossa on hinta ja täytteet sun muut
   const pizza = {
     name: "Fantasia",

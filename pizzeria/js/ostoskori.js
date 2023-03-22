@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
   nameHeader.textContent = "Tuote";
   const priceHeader = document.createElement("th");
   priceHeader.textContent = "Hinta";
+  const koko = document.createElement("th");
+  koko.textContent = "Koko"
   const topping = document.createElement("th")
   topping.textContent = "Täytteet"
   const removeHeader = document.createElement("th");
@@ -22,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   headerRow.appendChild(nameHeader);
   headerRow.appendChild(priceHeader);
+  headerRow.appendChild(koko)
   headerRow.appendChild(topping);
   headerRow.appendChild(removeHeader);
   thead.appendChild(headerRow);
@@ -46,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const priceCell = document.createElement("td");
     const price = parseFloat(item.price.replace("€", "").trim()); // Poistetaan €-merkki ja muunnetaan numeroksi
     priceCell.textContent = `€${price.toFixed(2)}`; // Lisätään €-merkki takaisin ja muotoillaan valuuttana
+    const kokoCell = document.createElement("td")
     const toppingCell  = document.createElement("td")
 
     const removeCell = document.createElement("td");
@@ -68,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         removeCell.appendChild(removeButton);
         row.appendChild(nameCell);
         row.appendChild(priceCell);
+        row.appendChild(kokoCell);
         row.appendChild(toppingCell)
         row.appendChild(removeCell);
         tbody.appendChild(row);
