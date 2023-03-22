@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const price = parseFloat(item.price.replace("€", "").trim()); // Poistetaan €-merkki ja muunnetaan numeroksi
     priceCell.textContent = `€${price.toFixed(2)}`; // Lisätään €-merkki takaisin ja muotoillaan valuuttana
     const kokoCell = document.createElement("td")
+    kokoCell.textContent = item.koko
     const toppingCell  = document.createElement("td")
 
     const removeCell = document.createElement("td");

@@ -16,33 +16,43 @@ document.addEventListener("DOMContentLoaded", function() {
 }) 
 
 const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+
 if(!localStorage.getItem("ostoskori").length < 0){
-  localStorage.setItem("ostoskori", [])
+  localStorage.setItem("ostoskori", []);
 }
-addToCartBtns.forEach(function(btn) {
+
+addToCartBtns.forEach(function(btn, index) {
+  const koko = document.querySelectorAll('.koko-valinta');
   btn.addEventListener('click', function() {
+    console.log(koko[index].value)
     const name = btn.dataset.name;
     const price = btn.dataset.price;
-    const item = {name: name, price: price};
-    const kori = localStorage.getItem("ostoskori")
+    const item = {name: name, price: price, koko: koko[index].value};
+    const kori = localStorage.getItem("ostoskori");
+
     if (!kori) {
-        localStorage.removeItem("ostoskori")
+        localStorage.removeItem("ostoskori");
     }
 
     let cart = JSON.parse(localStorage.getItem('ostoskori')) || [];
-    console.log(cart)
     cart.push(item);
     localStorage.setItem('ostoskori', JSON.stringify(cart));
 
-    const notification = document.getElementById("notification")
-    notification.innerHTML = `${name} on lisätty ostoskoriin`
-    notification.style.display ="block"
+    const notification = document.getElementById("notification");
+    notification.innerHTML = `${name} (${koko[index].value}) on lisätty ostoskoriin`;
+    notification.style.display ="block";
+
     setTimeout(() => {
-        notification.style.display = "none"
+        notification.style.display = "none";
     }, 3000);
 
   });
 });
+
+if (koko === "iso") {
+  totalPrice = totalPrice + 5.50
+}
+
 function juomat() {
   juoma.style.display ="flex"
   juomateksti.style.display = "block"
