@@ -13,16 +13,16 @@ document.addEventListener("DOMContentLoaded", function() {
   
   
   nameHeader.textContent = "Tuote";
-  nameHeader.style.paddingLeft = "30px";
+  nameHeader.style.paddingLeft = "20px";
   const priceHeader = document.createElement("th");
   priceHeader.textContent = "Hinta";
-  priceHeader.style.paddingLeft = "65px";
+  priceHeader.style.paddingLeft = "125px";
   const koko = document.createElement("th");
   koko.textContent = "Koko"
-  koko.style.paddingLeft = "40px";
+  koko.style.paddingLeft = "100px";
   const topping = document.createElement("th") 
   topping.textContent = "Täytteet"
-  topping.style.paddingLeft = "40px";
+  topping.style.paddingLeft = "10px";
   const removeHeader = document.createElement("th");
   removeHeader.textContent = "Poista";
   removeHeader.style.paddingLeft = "75px";
@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let totalPrice = 0; // Alustetaan kokonaishintamuuttuja
   const totalDiv = document.createElement("div"); // Luodaan elementti kokonaishinnan näyttämistä varten
   totalDiv.textContent = `Kokonaishinta: €${totalPrice.toFixed(2)}`;
+  totalDiv.style.fontSize = "20px"
   const cartContainer = document.querySelector("#cart-container"); // Haetaan kontainerielementti
   cartContainer.appendChild(table); // Lisätään taulukko kontaineriin
   cartContainer.appendChild(totalDiv); // Lisätään kokonaishinta kontaineriin

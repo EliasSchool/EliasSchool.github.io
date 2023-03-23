@@ -53,16 +53,42 @@
     </div>
     <!-- Navbar End -->
 
+    <style>
+    input[type=text] {
+        width: 100%;
+        height: 50px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    input[type=info] {
+        width: 100%;
+        height: 100px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    span {
+        display: block;
+        margin-top: -20px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: gray;
+    }
+    </style>
+
+
+
+
     <!-- Page Header Start -->
     <body>
-        <!-- Page Header Start -->
         <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
             <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 200px">
             </div>
         </div>
         <!-- Page Header End -->
         
-        <div style="width: 800px; margin: 0 auto; border-width: 1px; border-color: black; text-align: center;">
+        <div style="width: 1000px; margin: 0 auto; border-width: 1px; border-color: black; text-align: center;">
           <div class="kori">
             <h1>Ostoskori</h1>
             <table id="table">
@@ -76,9 +102,9 @@
               </tbody>  <!-- Shopping cart items will be displayed here -->
             </table>
             <div id="cart-container" style="text-align: center;"></div>
-            <button id="clear-cart">Tyhjennä ostoskori</button>
+            <button id="clear-cart" style="font-size: 18px;">Tyhjennä ostoskori</button>
             <h1 class="m-0">&nbsp</h1>
-            <form action="/action_page.php" style="width: 400px; margin: 0 auto;">
+            <form action="" style="width: 400px; margin: 0 auto;">
                 <h4 style="text-align: center;">Tilauksen tiedot</h4>
                 <label for="fname"><h5>Etunimi ja sukunimi *</h5></label><br>
                 <input type="text" id="fname" name="fname" required><br><br>
@@ -87,18 +113,40 @@
                 <label for="lname"><h5>Puhelin *</h5></label><br>
                 <input type="text" id="phone" name="phone" required><br><br>
                 <label for="lname"><h5>Lisätiedot</h5></label><br>
-                <input type="text" id="notes" name="notes"><br><br>
-                <label for="kuljetustapa" style="text-align: right 10px;"><h5>Kuljetustapa</h5></label>
-                <select name="kuljetustapa" class="kuljetusTapa"><br><br>
-                <option value="kuljetus">Kuljetus</option>
-                <option value="nouto">Nouto</option>
-                <option value="paikanpaalla">Paikan päällä</option>
+                <input type="info" id="notes" name="notes"><br><br>
+                <span>esim. ovikoodi, yritys, ruoka-aineallergia</span>
+                <div id="addressField" style="display: none;">
+                  <label for="address"><h5>Kotiosoite *</h5></label><br>
+                  <input type="text" id="address" name="address" required><br><br>
+                </div>
+                <label for="kuljetustapa" style="text-align: right 10px;"><h5>Toimitustapa</h5></label>
+                <select name="kuljetustapa" class="kuljetusTapa" style="width: 135px; height: 25px;">
+                  <option value="paikanpaalla">Paikan päällä</option>   
+                  <option value="nouto">Nouto</option> 
+                  <option value="kuljetus">Kuljetus</option>
                 </select><br><br>
-                <input type="submit" value="Tallenna Tiedot">
-            </form>          
+                <button type="submit" style="background-color: #DA9F5B; border-color: #DA9F5B; padding: 5px; font-size: 18px;">Tallenna tiedot </button>
+              </form>
+              
+              <script>
+                const kuljetusTapaSelect = document.querySelector('.kuljetusTapa');
+                const addressInput = document.querySelector('#addressField');
+                addressInput.style.display = 'none';
+                
+                kuljetusTapaSelect.addEventListener('change', () => {
+                  if (kuljetusTapaSelect.value === 'kuljetus') {
+                    addressInput.style.display = 'block';
+                    addressInput.querySelector('input').setAttribute('required', '');
+                  } else {
+                    addressInput.style.display = 'none';
+                    addressInput.querySelector('input').removeAttribute('required');
+                  }
+                });
+              </script>                      
           </div>
         </div>
     </body>
+
 
     <!-- Footer Start -->
     <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
