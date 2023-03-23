@@ -115,16 +115,16 @@
                 <label for="lname"><h5>Lisätiedot</h5></label><br>
                 <input type="info" id="notes" name="notes"><br><br>
                 <span>esim. ovikoodi, yritys, ruoka-aineallergia</span>
-                <div id="addressField" style="display: none;">
-                  <label for="address"><h5>Kotiosoite *</h5></label><br>
-                  <input type="text" id="address" name="address" required><br><br>
-                </div>
                 <label for="kuljetustapa" style="text-align: right 10px;"><h5>Toimitustapa</h5></label>
                 <select name="kuljetustapa" class="kuljetusTapa" style="width: 135px; height: 25px;">
                   <option value="paikanpaalla">Paikan päällä</option>   
                   <option value="nouto">Nouto</option> 
                   <option value="kuljetus">Kuljetus</option>
                 </select><br><br>
+                <div id="addressField" style="display: none;">
+                    <label for="address"><h5>Kotiosoite *</h5></label><br>
+                    <input type="text" id="address" name="address" required><br><br>
+                  </div>
                 <button type="submit" style="background-color: #DA9F5B; border-color: #DA9F5B; padding: 5px; font-size: 18px;">Tallenna tiedot </button>
               </form>
               
