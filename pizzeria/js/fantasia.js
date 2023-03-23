@@ -52,5 +52,5 @@ function addToCart() {
   localStorage.setItem('ostoskori', JSON.stringify(cartItems));
 
   // Show success message to user
-  alert('Pizza added to cart!');
+  alert('Fantasia Pizza on lisätty ostoskoriin!');
 }

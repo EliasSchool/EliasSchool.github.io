@@ -53,29 +53,52 @@
     </div>
     <!-- Navbar End -->
 
-
     <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
-        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 200px">
+    <body>
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+            <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 200px">
+            </div>
         </div>
-    </div>
-    <!-- Page Header End -->
-    <div class="kori">
-        <h1>Ostoskori</h1>
-        <table id="table">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Shopping cart items will be displayed here -->
-          </tbody>
-        </table>
-        <div id="cart-container"></div>
-        <button id="clear-cart">Tyhjennä ostoskori</button>
-      </div>
+        <!-- Page Header End -->
+        
+        <div style="width: 800px; margin: 0 auto; border-width: 1px; border-color: black; text-align: center;">
+          <div class="kori">
+            <h1>Ostoskori</h1>
+            <table id="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>  <!-- Shopping cart items will be displayed here -->
+            </table>
+            <div id="cart-container" style="text-align: center;"></div>
+            <button id="clear-cart">Tyhjennä ostoskori</button>
+            <h1 class="m-0">&nbsp</h1>
+            <form action="/action_page.php" style="width: 400px; margin: 0 auto;">
+                <h4 style="text-align: center;">Tilauksen tiedot</h4>
+                <label for="fname"><h5>Etunimi ja sukunimi *</h5></label><br>
+                <input type="text" id="fname" name="fname" required><br><br>
+                <label for="lname"><h5>Sähköpostiosoite *</h5></label><br>
+                <input type="text" id="lname" name="lname" required><br><br>
+                <label for="lname"><h5>Puhelin *</h5></label><br>
+                <input type="text" id="phone" name="phone" required><br><br>
+                <label for="lname"><h5>Lisätiedot</h5></label><br>
+                <input type="text" id="notes" name="notes"><br><br>
+                <label for="kuljetustapa" style="text-align: right 10px;"><h5>Kuljetustapa</h5></label>
+                <select name="kuljetustapa" class="kuljetusTapa"><br><br>
+                <option value="kuljetus">Kuljetus</option>
+                <option value="nouto">Nouto</option>
+                <option value="paikanpaalla">Paikan päällä</option>
+                </select><br><br>
+                <input type="submit" value="Tallenna Tiedot">
+            </form>          
+          </div>
+        </div>
+    </body>
 
     <!-- Footer Start -->
     <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">

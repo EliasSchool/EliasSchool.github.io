@@ -13,14 +13,19 @@ document.addEventListener("DOMContentLoaded", function() {
   
   
   nameHeader.textContent = "Tuote";
+  nameHeader.style.paddingLeft = "30px";
   const priceHeader = document.createElement("th");
   priceHeader.textContent = "Hinta";
+  priceHeader.style.paddingLeft = "65px";
   const koko = document.createElement("th");
   koko.textContent = "Koko"
-  const topping = document.createElement("th")
+  koko.style.paddingLeft = "40px";
+  const topping = document.createElement("th") 
   topping.textContent = "Täytteet"
+  topping.style.paddingLeft = "40px";
   const removeHeader = document.createElement("th");
   removeHeader.textContent = "Poista";
+  removeHeader.style.paddingLeft = "75px";
 
   headerRow.appendChild(nameHeader);
   headerRow.appendChild(priceHeader);
